@@ -42,12 +42,13 @@ const changeColor = () => {
 }
 
 
+//adEventListener is attached to every div using forEach.
+const divs = document.querySelectorAll('div');
 
-// const divs = document.querySelectorAll('div')
-// divs.forEach((div) => {
-//     div.addEventListener('click',()=>{
-//         div.style.backgroundColor =`rgb(${randRed},${randGreen},${randBlue})`;
-//     })
+divs.forEach((div) => {
+    div.addEventListener('click',(e)=>{
+        e.target.style.backgroundColor = changeColor();
+    })
     
 
-// })
+})
