@@ -21,7 +21,8 @@ const numberOfAppends = (num)=>{
 
 }
 
-numberOfAppends(256)
+//256 div elements made to cover for the whole 16*16 need of the element. 
+numberOfAppends(256);
 
 
 
