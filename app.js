@@ -13,10 +13,10 @@ const appendDiv = () => {
 }
 
 //functionality to specify the number of appends to be made.
-const numberOfAppends = (num)=>{
+const numberOfAppends = (num) => {
     for (let i = 0; i < num; i++) {
         appendDiv();
-    
+
     }
 
 }
@@ -27,9 +27,17 @@ numberOfAppends(256);
 
 
 //functionality to change the color of the div element.
-// const changeColor = ()=>{
-//     const randRed = Math.floor(Math.random()*256);
-//     const randBlue= Math.floor(Math.random()*256);
-//     const randGreen = Math.floor(Math.random()*256);
+const changeColor = () => {
+    const randRed = Math.floor(Math.random() * 256);
+    const randBlue = Math.floor(Math.random() * 256);
+    const randGreen = Math.floor(Math.random() * 256);
+
+    const divs = document.querySelectorAll('div');
+
+    divs.forEach((div) => {
+        div.style.backgroundColor =`rgb(${randRed},${randGreen},${randBlue})`;
+
+    })
     
-// }
+
+}
