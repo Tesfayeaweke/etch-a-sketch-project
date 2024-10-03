@@ -13,15 +13,15 @@ const appendDiv = () => {
 }
 
 //functionality to specify the number of appends to be made.
-// const numberOfAppends = (num)=>{
-//     for (let i = 0; i < num; i++) {
-//         appendDiv();
+const numberOfAppends = (num)=>{
+    for (let i = 0; i < num; i++) {
+        appendDiv();
     
-//     }
+    }
 
-// }
+}
 
-// numberOfAppends(256)
+numberOfAppends(256)
 
 
 
