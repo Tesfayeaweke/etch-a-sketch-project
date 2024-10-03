@@ -26,18 +26,28 @@ numberOfAppends(256);
 
 
 
-//functionality to change the color of the div element.
+//functionality to generate random color.
 const changeColor = () => {
     const randRed = Math.floor(Math.random() * 256);
     const randBlue = Math.floor(Math.random() * 256);
     const randGreen = Math.floor(Math.random() * 256);
 
-    const divs = document.querySelectorAll('div');
+    
+    return `rgb(${randRed},${randGreen},${randBlue})`;
+    
 
-    divs.forEach((div) => {
-        div.style.backgroundColor =`rgb(${randRed},${randGreen},${randBlue})`;
-
-    })
+    
     
 
 }
+
+
+
+// const divs = document.querySelectorAll('div')
+// divs.forEach((div) => {
+//     div.addEventListener('click',()=>{
+//         div.style.backgroundColor =`rgb(${randRed},${randGreen},${randBlue})`;
+//     })
+    
+
+// })
