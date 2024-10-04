@@ -21,8 +21,28 @@ const numberOfAppends = (num) => {
 
 }
 
+const divs = document.querySelectorAll('div');
+const numberOfRows = parseInt(prompt('Enter the number of row and columns:'));
+
+const numberOfElements = numberOfRows * numberOfRows;
+const widthOfDiv = 100 / numberOfRows;
+
+//a functionlity to make the default amount even row and columns by taking the number of rows needed as a parameter. 
+const makeDefaultRows = (rows) => {
+    
+    const widthOfDiv = 100 / rows;
+    const divs = document.querySelectorAll('div');
+    divs.forEach((div) => {
+        div.style.flexBasis = `${widthOfDiv}%`
+    })
+
+
+}
 //256 div elements made to cover for the whole 16*16 need of the element. 
-numberOfAppends(256);
+const defaultElementsNumber = 256;
+const defaultnumberOfRows= Math.sqrt(defaultElementsNumber);
+numberOfAppends(defaultElementsNumber);
+makeDefaultRows(defaultnumberOfRows);
 
 
 
@@ -32,23 +52,33 @@ const changeColor = () => {
     const randBlue = Math.floor(Math.random() * 256);
     const randGreen = Math.floor(Math.random() * 256);
 
-    
-    return `rgb(${randRed},${randGreen},${randBlue})`;
-    
 
-    
-    
+    return `rgb(${randRed},${randGreen},${randBlue})`;
+
+
+
+
 
 }
 
 
 //adEventListener is attached to every div using forEach.
-const divs = document.querySelectorAll('div');
 
-divs.forEach((div) => {
-    div.addEventListener('click',(e)=>{
-        e.target.style.backgroundColor = changeColor();
-    })
-    
+const container = document.querySelector('.container');
 
+// divs.forEach((div) => {
+//     div.addEventListener('mouseover',(e)=>{
+//         e.stopPropagation();
+
+//         div.style.backgroundColor = changeColor();
+//         console.log(e.currentTarget)
+
+//     })
+
+
+// })
+
+container.addEventListener('mouseover', (e) => {
+    e.stopPropagation();
+    e.target.style.backgroundColor = changeColor();
 })
